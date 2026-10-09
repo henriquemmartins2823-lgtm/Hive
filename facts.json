@@ -1,0 +1,655 @@
+{
+  "_meta": {
+    "sources": [
+      "README.md (EN) and docs/README.pt-BR.md of the program repository, HEAD b84461e (2026-10-08)",
+      "hive-mvp-estado-2026-10-07.md (state report, commit faad06c)"
+    ],
+    "asOf": "2026-10-08",
+    "headCommit": "b84461e",
+    "warning": "Valores extraídos por script do README e do relatório de estado, com conferência cruzada de todas as assinaturas. Não editar à mão; se o repositório do MVP mudar, regenerar."
+  },
+  "cluster": "devnet",
+  "brand": {
+    "product": "Hive",
+    "codeName": "VeriCode",
+    "codeNameNote": "O código, os programas, a CLI e o repositório mantêm o nome legado VeriCode e isso não vai mudar.",
+    "slogan": {
+      "en": "Hive. Trust starts with a reason.",
+      "pt": "Hive. Confiança começa com um porquê.",
+      "source": "documento de identidade de 05.10.2026; ainda marcado TODO(brand) no repositório do MVP"
+    }
+  },
+  "programs": {
+    "escrow": {
+      "name": "vericode_escrow",
+      "address": "GZqbL2TbeDVHcNRosngaRfCwzV9YJT6iEbckYr8uwkCH",
+      "explorer": "https://explorer.solana.com/address/GZqbL2TbeDVHcNRosngaRfCwzV9YJT6iEbckYr8uwkCH?cluster=devnet",
+      "sizeBytes": 395064,
+      "sha256Prefix": "cdf6967f",
+      "upgradeAuthority": "none",
+      "finalizationTx": "https://explorer.solana.com/tx/4AsofYxry7vjdpo2CQxSKSg9MdczuCB4GnRCLzz6ZeVFffPkWdedFBuBQDw58audRHJLcAQ1sGrN5G3t2CoW7eYH?cluster=devnet"
+    },
+    "verifier": {
+      "name": "risc0-solana Groth16 verifier v3.0.0",
+      "address": "THq1qFYQoh7zgcjXoMXduDBqiZRCPeg3PvvMbrVQUge",
+      "explorer": "https://explorer.solana.com/address/THq1qFYQoh7zgcjXoMXduDBqiZRCPeg3PvvMbrVQUge?cluster=devnet",
+      "upgradeAuthority": "None",
+      "upstreamCommit": "ee415935"
+    }
+  },
+  "mint": {
+    "name": "Test USDC",
+    "address": "9TE2VPFmgrNxT22yS3sEZyRcMxLgJkwzgAoquWRXwV2F",
+    "explorer": "https://explorer.solana.com/address/9TE2VPFmgrNxT22yS3sEZyRcMxLgJkwzgAoquWRXwV2F?cluster=devnet",
+    "decimals": 6,
+    "freezeAuthority": "none"
+  },
+  "imageId": "4da06f90da75ec8980c943ce017d69c48370fddbf3aa27689d375d78fac0fb1a",
+  "guest": {
+    "sizeBytes": 180300,
+    "sha256Prefix": "e09ba8cf"
+  },
+  "terms": {
+    "specHashPrefix": "af642b56",
+    "harnessHashPrefix": "01124025",
+    "rule": "output = 2 × input (v1, deliberadamente trivial)"
+  },
+  "journal": {
+    "version": 1,
+    "bytes": 165,
+    "fields": [
+      "schema_version",
+      "job_id",
+      "spec_hash",
+      "harness_hash",
+      "artifact_hash",
+      "image_id",
+      "verdict"
+    ]
+  },
+  "states": [
+    "Funded",
+    "Released",
+    "RefundedOnFail",
+    "RefundedOnTimeout"
+  ],
+  "uiRound": {
+    "date": "2026-10-07",
+    "gates": "D11–D12",
+    "steps": "U1–U10",
+    "totalDuration": "11 min 16 s",
+    "newTransactions": 10,
+    "transactions": [
+      {
+        "id": "U1",
+        "key": "fund_T3",
+        "kind": "fund",
+        "outcome": "Funded",
+        "job": "T3 2c38ca66…",
+        "sig": "8AJzbbKfaeKSpjRxzX2wTu1R4DxpujLgT7z2ZRsUHjeUGDMka8bAkyriXZJ7ZuCNTfY3zYzq3rQWr1P4yoABDNo",
+        "url": "https://explorer.solana.com/tx/8AJzbbKfaeKSpjRxzX2wTu1R4DxpujLgT7z2ZRsUHjeUGDMka8bAkyriXZJ7ZuCNTfY3zYzq3rQWr1P4yoABDNo?cluster=devnet",
+        "note": "prazo 1.560 slots"
+      },
+      {
+        "id": "U2",
+        "key": "refund_before_deadline",
+        "kind": "negative",
+        "outcome": "Rejected",
+        "job": "T3",
+        "sig": "4jDL97DGJRLQhB2m2NKK9kof85EFHSQMyPDPMmdhQ9mm6nkRKcbFF9HCuXcEiooWKKWomBCuhhTd2KbpYFAGiRHF",
+        "url": "https://explorer.solana.com/tx/4jDL97DGJRLQhB2m2NKK9kof85EFHSQMyPDPMmdhQ9mm6nkRKcbFF9HCuXcEiooWKKWomBCuhhTd2KbpYFAGiRHF?cluster=devnet",
+        "errorCode": 6021,
+        "rejectedBy": "escrow",
+        "note": "DeadlineNotReached"
+      },
+      {
+        "id": "U3",
+        "key": "fund_P3",
+        "kind": "fund",
+        "outcome": "Funded",
+        "job": "P3 26df9ef4…",
+        "sig": "5vWoxx2mBra2iP5TfBX9FeYUjt5fujMde7m7saWHpo1kGEksZbrwVy66L9X6DqMLqDDNbk6BR5P6UjXqtZK5gzT6",
+        "url": "https://explorer.solana.com/tx/5vWoxx2mBra2iP5TfBX9FeYUjt5fujMde7m7saWHpo1kGEksZbrwVy66L9X6DqMLqDDNbk6BR5P6UjXqtZK5gzT6?cluster=devnet",
+        "note": "prazo 9.000 slots"
+      },
+      {
+        "id": "U4",
+        "key": "other_job_receipt",
+        "kind": "negative",
+        "outcome": "Rejected",
+        "job": "P3",
+        "sig": "5CBFajsaFvYreCJkQwiPuR8rHWtpBKCULoVAeysUJGRwTDfF2CXYzeFkuit6azjBjqQkoif8TbYwxByv8Ckmo4en",
+        "url": "https://explorer.solana.com/tx/5CBFajsaFvYreCJkQwiPuR8rHWtpBKCULoVAeysUJGRwTDfF2CXYzeFkuit6azjBjqQkoif8TbYwxByv8Ckmo4en?cluster=devnet",
+        "errorCode": 6014,
+        "rejectedBy": "escrow",
+        "note": "JournalJobIdMismatch",
+        "otherJobPrefix": "bc334093…"
+      },
+      {
+        "id": "U5",
+        "key": "tampered_proof",
+        "kind": "negative",
+        "outcome": "Rejected",
+        "job": "P3",
+        "sig": "kTQdVojxjzJULzS97Jo5HBFRcroqnYVMaK9Crtx2LmyAY1pUhnBgh7v1Xs686wY3gvvxGz3aiN9URWhNgepRg39",
+        "url": "https://explorer.solana.com/tx/kTQdVojxjzJULzS97Jo5HBFRcroqnYVMaK9Crtx2LmyAY1pUhnBgh7v1Xs686wY3gvvxGz3aiN9URWhNgepRg39?cluster=devnet",
+        "errorCode": 6003,
+        "rejectedBy": "verifier",
+        "note": "PairingError"
+      },
+      {
+        "id": "U6",
+        "key": "released",
+        "kind": "settle",
+        "outcome": "Released",
+        "job": "P3",
+        "sig": "2gB9djwM3WpApHLXYf5riF974mTK5W4UW7HCv1xJamLPu3NEwnPcCY4oT6zAwvbMkaKRcATf1LCQPyXP8rmpj3o",
+        "url": "https://explorer.solana.com/tx/2gB9djwM3WpApHLXYf5riF974mTK5W4UW7HCv1xJamLPu3NEwnPcCY4oT6zAwvbMkaKRcATf1LCQPyXP8rmpj3o?cluster=devnet",
+        "computeUnits": 122156,
+        "note": "1 Test USDC ao executor; verificador 99.541 CU"
+      },
+      {
+        "id": "U7",
+        "key": "settle_again",
+        "kind": "negative",
+        "outcome": "Rejected",
+        "job": "P3",
+        "sig": "j2pmqFWuTSe4H6isKyEFX3cBYmufEANP9Ue1p74tTUawXbiPSQ4KqckPW6WX3gnoAWsXE5XBdeVHEevpLa852ky",
+        "url": "https://explorer.solana.com/tx/j2pmqFWuTSe4H6isKyEFX3cBYmufEANP9Ue1p74tTUawXbiPSQ4KqckPW6WX3gnoAWsXE5XBdeVHEevpLa852ky?cluster=devnet",
+        "errorCode": 6007,
+        "rejectedBy": "escrow",
+        "note": "AlreadyReleased"
+      },
+      {
+        "id": "U8",
+        "key": "fund_F3",
+        "kind": "fund",
+        "outcome": "Funded",
+        "job": "F3 7395a76d…",
+        "sig": "2jjiYDAoCQTrF93LvTAFB3RHTB3ab86k2BZmRXnFv3FmgK2ps2Kf1U2vs4MeFMMo7iqDQ77TSqz9hjigaQMrFQbW",
+        "url": "https://explorer.solana.com/tx/2jjiYDAoCQTrF93LvTAFB3RHTB3ab86k2BZmRXnFv3FmgK2ps2Kf1U2vs4MeFMMo7iqDQ77TSqz9hjigaQMrFQbW?cluster=devnet",
+        "note": "prazo 9.000 slots"
+      },
+      {
+        "id": "U9",
+        "key": "refunded_on_fail",
+        "kind": "settle",
+        "outcome": "RefundedOnFail",
+        "job": "F3",
+        "sig": "4jcugMyXqhAttG7cjcjWZnMiyZe3SosHC2cgphQ6rf48n5KfrWZ4TRfzR1ZioP5NwYE2qeo2zUDEcD4rJQDTCmSJ",
+        "url": "https://explorer.solana.com/tx/4jcugMyXqhAttG7cjcjWZnMiyZe3SosHC2cgphQ6rf48n5KfrWZ4TRfzR1ZioP5NwYE2qeo2zUDEcD4rJQDTCmSJ?cluster=devnet",
+        "note": "prova do FAIL verificada; 1 Test USDC de volta ao comprador"
+      },
+      {
+        "id": "U10",
+        "key": "refunded_on_timeout",
+        "kind": "settle",
+        "outcome": "RefundedOnTimeout",
+        "job": "T3",
+        "sig": "5oTbFiTXjkv8aBgTQPrKSqTShfNgVqSePZuP5x57GXxfEi6mTPMLfXFCWpnZSQzgcXbyqSjBHSJy65dEy5aAKVzi",
+        "url": "https://explorer.solana.com/tx/5oTbFiTXjkv8aBgTQPrKSqTShfNgVqSePZuP5x57GXxfEi6mTPMLfXFCWpnZSQzgcXbyqSjBHSJy65dEy5aAKVzi?cluster=devnet",
+        "note": "prazo vencido; sem verificador"
+      }
+    ]
+  },
+  "metrics": {
+    "verifierComputeUnits": 99541,
+    "settlementComputeUnitsTotal": 122156,
+    "proofCompositeSeconds": {
+      "min": 7,
+      "max": 9
+    },
+    "proofGroth16CompressionSeconds": {
+      "min": 90,
+      "max": 180
+    },
+    "examples": {
+      "pass_": {
+        "input": [
+          21,
+          42
+        ],
+        "composite": 7.2,
+        "groth16": 177.9
+      },
+      "fail": {
+        "input": [
+          7,
+          15
+        ],
+        "composite": 8.6,
+        "groth16": 91.4
+      }
+    },
+    "deadlineSlotsRange": {
+      "min": 1560,
+      "max": 9000
+    },
+    "tests": {
+      "core": "42/42",
+      "program": "61/61",
+      "cli": "30/30",
+      "prover": "5/5 + 2/2",
+      "workerUi": "53/53"
+    },
+    "deadlineSubmission": "2026-10-11"
+  },
+  "limits": [
+    "Somente devnet e Test USDC",
+    "Sem Verifier Router (CPI direta ao verificador)",
+    "Sem e-stop",
+    "Regra v1 trivial",
+    "Um operador local opera comprador e executor",
+    "Prover exige Docker x86 e bastante memória",
+    "Rent de ~0,0036 SOL por Job fica preso (sem close)",
+    "Test USDC: mint authority é a chave de deployer do projeto"
+  ],
+  "todo": {
+    "demoVideoUrl": null,
+    "pitchVideoUrl": null,
+    "technicalDemoUrl": null,
+    "fullTakeUrl": null,
+    "liveUrl": null,
+    "contactEmail": null,
+    "team": null,
+    "validation": null,
+    "businessModel": null,
+    "notes": {
+      "validation": "Se continuar null, a landing diz \"No user validation yet.\" (como o roteiro do pitch).",
+      "businessModel": "Não exibir enquanto for null.",
+      "video": "TODO(video): o pitch e a demo técnica ainda não têm URL."
+    }
+  },
+  "repo": {
+    "url": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/LICENSE",
+    "visibility": "public",
+    "commitsOnMain": 61,
+    "commitsAsOf": "2026-10-09 (GitHub)",
+    "readme": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/README.md",
+    "readmePt": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/docs/README.pt-BR.md",
+    "evidence": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/docs/evidence.md",
+    "submission": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/docs/submission.md",
+    "pitchScript": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/docs/pitch-script.md",
+    "demoScript": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/docs/demo-script.md",
+    "brandManifest": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/brand/MANIFEST.md",
+    "allCasesAnchor": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/README.md#what-is-demonstrated",
+    "frozenPhrasesAnchor": "https://github.com/Lucas-Ibanez/colosseum-hackathon-sparta/blob/main/README.md#frozen-phrases-english-ratified-r-ui"
+  },
+  "claims": {
+    "source": "README.md (EN, D-EN-1, ratified R-UI) e docs/README.pt-BR.md (PT, congeladas no D9). Texto copiado por script; mudar exige decisão registrada em docs/decisions.md do repositório do MVP.",
+    "phrases": {
+      "f1": {
+        "label_en": "Claim",
+        "label_pt": "Claim",
+        "en": "Hive's Groth16 receipt is verified on devnet via CPI to the immutable Groth16 verifier of risc0-solana v3.0.0, in the same instruction that releases or refunds the Job's Test USDC.",
+        "pt": "A receipt Groth16 da Hive é verificada em devnet por CPI ao verificador Groth16 imutável de risc0-solana v3.0.0, na mesma instrução que libera ou devolve o Test USDC do Job.",
+        "en_note": "Always with the link of a transaction.",
+        "pt_note": "Sempre com o link de uma transação da tabela acima."
+      },
+      "f2": {
+        "label_en": "Statement",
+        "label_pt": "Afirmação",
+        "en": "A previously committed deterministic evaluator ran on the artifact delivered in the Job and produced the published verdict. The program moves the Test USDC only after checking the binding between journal, Job and delivery and verifying the proof.",
+        "pt": "Um avaliador determinístico previamente comprometido executou sobre o artefato entregue no Job e produziu o veredito publicado. O programa só move o Test USDC depois de conferir o vínculo entre journal, Job e entrega e de verificar a prova.",
+        "en_note": "",
+        "pt_note": ""
+      },
+      "f3": {
+        "label_en": "Limit",
+        "label_pt": "Limite",
+        "en": "The proof attests to the execution of the fixed rule on this artifact, not to the quality of a piece of software. The v1 rule is trivial (output = 2 × input) and serves to demonstrate the flow.",
+        "pt": "A prova atesta a execução da regra fixa sobre este artefato, não a qualidade de um software. A regra v1 é trivial (saída = 2 × entrada) e serve para demonstrar o fluxo.",
+        "en_note": "",
+        "pt_note": ""
+      },
+      "f4": {
+        "label_en": "No administrator",
+        "label_pt": "Sem administrador",
+        "en": "The escrow and the verifier are immutable (upgrade authority `none`). No one, not even the project, changes the rules or decides the payment; there is also no e-stop.",
+        "pt": "O escrow e o verificador são imutáveis (upgrade authority `none`). Ninguém, nem o projeto, muda as regras ou decide o pagamento; também não existe e-stop.",
+        "en_note": "",
+        "pt_note": ""
+      },
+      "f5": {
+        "label_en": "Network",
+        "label_pt": "Rede",
+        "en": "Devnet and Test USDC only; none of this exists on mainnet.",
+        "pt": "Só devnet e Test USDC; nada disso existe em mainnet.",
+        "en_note": "",
+        "pt_note": ""
+      },
+      "f6": {
+        "label_en": "Negatives",
+        "label_pt": "Negativos",
+        "en": "On devnet, a tampered proof, a journal from another Job, a refund before the deadline and a second settlement were rejected without moving funds.",
+        "pt": "Em devnet, uma prova adulterada, um journal de outro Job, um reembolso antes do prazo e uma segunda liquidação foram rejeitados sem mover fundos.",
+        "en_note": "Always with the links.",
+        "pt_note": "Sempre com os links."
+      },
+      "f7": {
+        "label_en": "Reproduction",
+        "label_pt": "Reprodução",
+        "en": "The flow was reproduced with this repository's CLI and prover in a clean environment: a fresh clone and fresh targets, with copied isolated toolchains, not a new machine.",
+        "pt": "O fluxo foi reproduzido pela CLI e pelo prover deste repositório num ambiente limpo: clone e targets novos, com toolchains isoladas copiadas, não uma máquina nova.",
+        "en_note": "(D9)",
+        "pt_note": "(D9)"
+      },
+      "f8": {
+        "label_en": "Proof",
+        "label_pt": "Prova",
+        "en": "The proof is generated locally and compressed to Groth16 in a local Docker container, with no network access.",
+        "pt": "A prova é gerada localmente e comprimida para Groth16 num container Docker local, sem rede.",
+        "en_note": "",
+        "pt_note": ""
+      }
+    },
+    "doNotSay": {
+      "en": "\"the code is correct\"; \"trustless\" or \"nobody needs to trust anybody\"; \"any repository\"; \"Verifier Router\" as the current path; \"mainnet\" or \"real money\"; \"ZK on-chain\" without phrase 1; \"audited\", \"private\" or \"new machine\". Also do not present an earlier run as live, nor show a receipt without saying which Job it belongs to.",
+      "pt": "\"o código está correto\"; \"trustless\" ou \"ninguém precisa confiar em ninguém\"; \"qualquer repositório\"; \"Verifier Router\" como caminho atual; \"mainnet\" ou \"dinheiro real\"; \"ZK on-chain\" sem a frase 1; \"auditado\"; \"privado\"; \"máquina nova\". Também não apresentar uma execução anterior como ao vivo, nem mostrar uma receipt sem dizer de qual Job ela é."
+    }
+  },
+  "readmeCases": [
+    {
+      "n": 1,
+      "case": "PASS, Job P₃ 26df9ef4… (D11–D12, through the Hive interface on the worker)",
+      "result": "deliver+release: proof verified (99,541 CU in the verifier) and 1 Test USDC to the executor",
+      "txs": [
+        {
+          "display": "2gB9djwM",
+          "sig": "2gB9djwM3WpApHLXYf5riF974mTK5W4UW7HCv1xJamLPu3NEwnPcCY4oT6zAwvbMkaKRcATf1LCQPyXP8rmpj3o",
+          "url": "https://explorer.solana.com/tx/2gB9djwM3WpApHLXYf5riF974mTK5W4UW7HCv1xJamLPu3NEwnPcCY4oT6zAwvbMkaKRcATf1LCQPyXP8rmpj3o?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "case": "FAIL, Job F₃ 7395a76d… (D11–D12, through the interface)",
+      "result": "deliver+refund_on_fail: proof of the FAIL verdict verified (99,541 CU) and 1 Test USDC back to the buyer",
+      "txs": [
+        {
+          "display": "4jcugMyX",
+          "sig": "4jcugMyXqhAttG7cjcjWZnMiyZe3SosHC2cgphQ6rf48n5KfrWZ4TRfzR1ZioP5NwYE2qeo2zUDEcD4rJQDTCmSJ",
+          "url": "https://explorer.solana.com/tx/4jcugMyXqhAttG7cjcjWZnMiyZe3SosHC2cgphQ6rf48n5KfrWZ4TRfzR1ZioP5NwYE2qeo2zUDEcD4rJQDTCmSJ?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "case": "Timeout, Job T₃ 2c38ca66… (D11–D12, through the interface)",
+      "result": "refund to the buyer after the deadline",
+      "txs": [
+        {
+          "display": "5oTbFiTX",
+          "sig": "5oTbFiTXjkv8aBgTQPrKSqTShfNgVqSePZuP5x57GXxfEi6mTPMLfXFCWpnZSQzgcXbyqSjBHSJy65dEy5aAKVzi",
+          "url": "https://explorer.solana.com/tx/5oTbFiTXjkv8aBgTQPrKSqTShfNgVqSePZuP5x57GXxfEi6mTPMLfXFCWpnZSQzgcXbyqSjBHSJy65dEy5aAKVzi?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "case": "Negatives of D11–D12 (through the interface)",
+      "result": "refund before the deadline (6021), receipt of Job bc334093… on P₃ (6014), tampered seal rejected by the verifier (6003) and second settlement (6007); nothing moves",
+      "txs": [
+        {
+          "display": "4jDL97DG",
+          "sig": "4jDL97DGJRLQhB2m2NKK9kof85EFHSQMyPDPMmdhQ9mm6nkRKcbFF9HCuXcEiooWKKWomBCuhhTd2KbpYFAGiRHF",
+          "url": "https://explorer.solana.com/tx/4jDL97DGJRLQhB2m2NKK9kof85EFHSQMyPDPMmdhQ9mm6nkRKcbFF9HCuXcEiooWKKWomBCuhhTd2KbpYFAGiRHF?cluster=devnet"
+        },
+        {
+          "display": "5CBFajsa",
+          "sig": "5CBFajsaFvYreCJkQwiPuR8rHWtpBKCULoVAeysUJGRwTDfF2CXYzeFkuit6azjBjqQkoif8TbYwxByv8Ckmo4en",
+          "url": "https://explorer.solana.com/tx/5CBFajsaFvYreCJkQwiPuR8rHWtpBKCULoVAeysUJGRwTDfF2CXYzeFkuit6azjBjqQkoif8TbYwxByv8Ckmo4en?cluster=devnet"
+        },
+        {
+          "display": "kTQdVojx",
+          "sig": "kTQdVojxjzJULzS97Jo5HBFRcroqnYVMaK9Crtx2LmyAY1pUhnBgh7v1Xs686wY3gvvxGz3aiN9URWhNgepRg39",
+          "url": "https://explorer.solana.com/tx/kTQdVojxjzJULzS97Jo5HBFRcroqnYVMaK9Crtx2LmyAY1pUhnBgh7v1Xs686wY3gvvxGz3aiN9URWhNgepRg39?cluster=devnet"
+        },
+        {
+          "display": "j2pmqFWu",
+          "sig": "j2pmqFWuTSe4H6isKyEFX3cBYmufEANP9Ue1p74tTUawXbiPSQ4KqckPW6WX3gnoAWsXE5XBdeVHEevpLa852ky",
+          "url": "https://explorer.solana.com/tx/j2pmqFWuTSe4H6isKyEFX3cBYmufEANP9Ue1p74tTUawXbiPSQ4KqckPW6WX3gnoAWsXE5XBdeVHEevpLa852ky?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "case": "PASS, Job bc334093… (D10, through the local worker on this repository's CLI and prover)",
+      "result": "deliver+release: proof verified (99,541 CU in the verifier) and 1 Test USDC to the executor",
+      "txs": [
+        {
+          "display": "ByGF4BFP",
+          "sig": "ByGF4BFPD8zkyqc6bg3Hd2FnQ1bF9gjo1EWp4fyVQkcGWfcj53gi99kWPLgyherzmvYp8knoqAzgjLLyhgpLnVR",
+          "url": "https://explorer.solana.com/tx/ByGF4BFPD8zkyqc6bg3Hd2FnQ1bF9gjo1EWp4fyVQkcGWfcj53gi99kWPLgyherzmvYp8knoqAzgjLLyhgpLnVR?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "case": "Timeout, Jobs 8ab4ee8d… and 8bce67f2… of the recordings (D10, through the worker)",
+      "result": "refund to the buyer after the deadline",
+      "txs": [
+        {
+          "display": "57UYbVX9",
+          "sig": "57UYbVX9gEXdp7dproD5mEyxj5UzxuQZdjwhQZe96XKTfCKbrWSxrfhKTmqrTdnAby8PGyJVSa1gDZsdk7P9Xd9v",
+          "url": "https://explorer.solana.com/tx/57UYbVX9gEXdp7dproD5mEyxj5UzxuQZdjwhQZe96XKTfCKbrWSxrfhKTmqrTdnAby8PGyJVSa1gDZsdk7P9Xd9v?cluster=devnet"
+        },
+        {
+          "display": "625JvmR8",
+          "sig": "625JvmR85QE6LbRZaE49kf3Y2cSFVnbKGaynVBbb8eeqM1Dj6r8UVUZiUbDoA4g5egJfqYUW175pG6d4NHYZWc3y",
+          "url": "https://explorer.solana.com/tx/625JvmR85QE6LbRZaE49kf3Y2cSFVnbKGaynVBbb8eeqM1Dj6r8UVUZiUbDoA4g5egJfqYUW175pG6d4NHYZWc3y?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "case": "Negatives of D10 (through the worker)",
+      "result": "refund before the deadline (6021), tampered seal rejected by the verifier (6003) and second settlement (6007); nothing moves",
+      "txs": [
+        {
+          "display": "3PJfg2jU",
+          "sig": "3PJfg2jUmmDVc5RuN31DgF3pJwcYnog8GUCYy9vvyB56n1drScwiY8dTTsXwZWsX59DCuRDn33YhwViff3shxv4L",
+          "url": "https://explorer.solana.com/tx/3PJfg2jUmmDVc5RuN31DgF3pJwcYnog8GUCYy9vvyB56n1drScwiY8dTTsXwZWsX59DCuRDn33YhwViff3shxv4L?cluster=devnet"
+        },
+        {
+          "display": "4cKK83JB",
+          "sig": "4cKK83JBYxRVfrAT5t6visKQdEWim5NANMe3eMH4bHsDmPumzq3WZb83F4eWiuYC694uivPqhsip3D8ySxJBmX2u",
+          "url": "https://explorer.solana.com/tx/4cKK83JBYxRVfrAT5t6visKQdEWim5NANMe3eMH4bHsDmPumzq3WZb83F4eWiuYC694uivPqhsip3D8ySxJBmX2u?cluster=devnet"
+        },
+        {
+          "display": "5ug6Pggx",
+          "sig": "5ug6PggxL9qZdgwkCu1Vt3oEYSFiBKXLdCi9bE6W1bewLjfa2yKpYjf8BeHzEjtvdkYDNLHZY4cjjBvkqtF9Bn5w",
+          "url": "https://explorer.solana.com/tx/5ug6PggxL9qZdgwkCu1Vt3oEYSFiBKXLdCi9bE6W1bewLjfa2yKpYjf8BeHzEjtvdkYDNLHZY4cjjBvkqtF9Bn5w?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "case": "PASS, Job P′ (D9, clean environment, this repository's CLI and prover)",
+      "result": "deliver+release: proof verified (99,541 CU in the verifier) and 1 Test USDC to the executor",
+      "txs": [
+        {
+          "display": "5tjezXYh",
+          "sig": "5tjezXYhN361HHUiZcMcJQFXwViWc4cSUfdreHfokdXuB89LrLDt6WPE8KRLhHwNE7rx5nGAgxjdfod6r7pPvDs1",
+          "url": "https://explorer.solana.com/tx/5tjezXYhN361HHUiZcMcJQFXwViWc4cSUfdreHfokdXuB89LrLDt6WPE8KRLhHwNE7rx5nGAgxjdfod6r7pPvDs1?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "case": "Timeout, Job T′ (D9)",
+      "result": "refund to the buyer after the deadline",
+      "txs": [
+        {
+          "display": "33ezPvow",
+          "sig": "33ezPvow48vSFHYS43i76pDJwkpyKTnDCN3Tdr1p7he8mbHjEpXvsBkt2MrMHKPUNW6AbqWE7oRJ7MriRZNxrjkh",
+          "url": "https://explorer.solana.com/tx/33ezPvow48vSFHYS43i76pDJwkpyKTnDCN3Tdr1p7he8mbHjEpXvsBkt2MrMHKPUNW6AbqWE7oRJ7MriRZNxrjkh?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "case": "Negatives of D9",
+      "result": "refund before the deadline (6021), receipt of Job P of D7 on P′ (6014), tampered seal rejected by the verifier (6003) and second settlement (6007); nothing moves",
+      "txs": [
+        {
+          "display": "3BKnczeK",
+          "sig": "3BKnczeKPQd15iCkYfPbnEvDbYayRfbVV9Zokqn3xLyVehJuZSNffgDy1paFTxof8tpYfaN92N789LzB2w4DQTd6",
+          "url": "https://explorer.solana.com/tx/3BKnczeKPQd15iCkYfPbnEvDbYayRfbVV9Zokqn3xLyVehJuZSNffgDy1paFTxof8tpYfaN92N789LzB2w4DQTd6?cluster=devnet"
+        },
+        {
+          "display": "8Kk5UkX5",
+          "sig": "8Kk5UkX5XW8tssPMxNSCEBt71jiv4RriHLDtYqRzb1f1U5WLZfgQmotQTD1ZqecEbyqMmhWSjQqWpXxCJUubJLg",
+          "url": "https://explorer.solana.com/tx/8Kk5UkX5XW8tssPMxNSCEBt71jiv4RriHLDtYqRzb1f1U5WLZfgQmotQTD1ZqecEbyqMmhWSjQqWpXxCJUubJLg?cluster=devnet"
+        },
+        {
+          "display": "HXgnGUhh",
+          "sig": "HXgnGUhhB4zRgD8Bubs6ULCqpuhoqBSuim3Vbx1kz7V3bK2FFJG3ND2jcTtRFf6QxD9i1bpwKW4z32yFYYEofVr",
+          "url": "https://explorer.solana.com/tx/HXgnGUhhB4zRgD8Bubs6ULCqpuhoqBSuim3Vbx1kz7V3bK2FFJG3ND2jcTtRFf6QxD9i1bpwKW4z32yFYYEofVr?cluster=devnet"
+        },
+        {
+          "display": "5T9XE5Y3",
+          "sig": "5T9XE5Y3DzqKffoeFFzEhgqxsuzqMstpxtMCQikrZPe1RyP1KWvRmPNs9CFuke1yBgtwg5vVnGZVpwHWZr31Dfrs",
+          "url": "https://explorer.solana.com/tx/5T9XE5Y3DzqKffoeFFzEhgqxsuzqMstpxtMCQikrZPe1RyP1KWvRmPNs9CFuke1yBgtwg5vVnGZVpwHWZr31Dfrs?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "case": "PASS, Job P (D7, this repository's CLI and prover)",
+      "result": "deliver+release: proof verified (99,541 CU in the verifier) and 1 Test USDC to the executor",
+      "txs": [
+        {
+          "display": "4oWhwZfU",
+          "sig": "4oWhwZfUzZhVhrTydrhdBx1TJxWVH2mdWdKwiUhtHtMnhmeJg3MprEshvp592hYMgsaiwwhyvsDHek1egS9zKM1L",
+          "url": "https://explorer.solana.com/tx/4oWhwZfUzZhVhrTydrhdBx1TJxWVH2mdWdKwiUhtHtMnhmeJg3MprEshvp592hYMgsaiwwhyvsDHek1egS9zKM1L?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "case": "PASS, Job A (D4b)",
+      "result": "release to the executor",
+      "txs": [
+        {
+          "display": "4yWq28Gw",
+          "sig": "4yWq28GwkT9uLbG8haXbQYQyMqNWd6Qc29hWrez9cT4tGu36mS1fY8w6ocu75d5JxfQSLzTKKbMPc131fbL7chhR",
+          "url": "https://explorer.solana.com/tx/4yWq28GwkT9uLbG8haXbQYQyMqNWd6Qc29hWrez9cT4tGu36mS1fY8w6ocu75d5JxfQSLzTKKbMPc131fbL7chhR?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "case": "FAIL, Job B (D4b)",
+      "result": "refund_on_fail to the buyer",
+      "txs": [
+        {
+          "display": "2osG9m8J",
+          "sig": "2osG9m8JcE1CpAKt8JribtJCw8ffrdhBh6hYm5xKeLPptM9YLsugouMRH2KnmRXAymwAMvBABUmuZY6tkwHoVbP4",
+          "url": "https://explorer.solana.com/tx/2osG9m8JcE1CpAKt8JribtJCw8ffrdhBh6hYm5xKeLPptM9YLsugouMRH2KnmRXAymwAMvBABUmuZY6tkwHoVbP4?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "case": "Timeout, Job T (D7)",
+      "result": "refund to the buyer after the deadline",
+      "txs": [
+        {
+          "display": "3fiNWgTW",
+          "sig": "3fiNWgTWdscCB8kRTE4gxacQgNXCZ36NHNhazzgUtRBiF7ub7Zs3NDBBZ7qwEdXGEy2HGUsZyyZX9sv7gxFsVZ7",
+          "url": "https://explorer.solana.com/tx/3fiNWgTWdscCB8kRTE4gxacQgNXCZ36NHNhazzgUtRBiF7ub7Zs3NDBBZ7qwEdXGEy2HGUsZyyZX9sv7gxFsVZ7?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "case": "Journal of another Job (D7)",
+      "result": "rejected (6014), nothing moves",
+      "txs": [
+        {
+          "display": "5eNRKgfH",
+          "sig": "5eNRKgfHii8gbWvJCNRTUehsT7Z46mXDC4Xorj2mfEfF4QjJ2nvFKwt3wmevJ5L81VXweaYpLzTxk3adKDAcBbJ7",
+          "url": "https://explorer.solana.com/tx/5eNRKgfHii8gbWvJCNRTUehsT7Z46mXDC4Xorj2mfEfF4QjJ2nvFKwt3wmevJ5L81VXweaYpLzTxk3adKDAcBbJ7?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "case": "Tampered seal (D4b)",
+      "result": "rejected by the verifier (6003), nothing moves",
+      "txs": [
+        {
+          "display": "5UwKqSJs",
+          "sig": "5UwKqSJsku7rvYCXWz96BYNDNo3DjA8Yn7YXC4eMj1SYMhiUUvDLBvTLwWQEeabffLe8GtVFLC6x8Z1KH1PvCsUU",
+          "url": "https://explorer.solana.com/tx/5UwKqSJsku7rvYCXWz96BYNDNo3DjA8Yn7YXC4eMj1SYMhiUUvDLBvTLwWQEeabffLe8GtVFLC6x8Z1KH1PvCsUU?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "case": "Second settlement (D7)",
+      "result": "release again on Job A → 6007; refund_on_fail again on Job B → 6008",
+      "txs": [
+        {
+          "display": "61de4rBk",
+          "sig": "61de4rBkBSN7UjqFrMed8a4KncQvRiBG4rNHJtqVA46B74tMUBoZ6stXVKx3RH2gMydCbRM4Ki9G7EXemgsqY7na",
+          "url": "https://explorer.solana.com/tx/61de4rBkBSN7UjqFrMed8a4KncQvRiBG4rNHJtqVA46B74tMUBoZ6stXVKx3RH2gMydCbRM4Ki9G7EXemgsqY7na?cluster=devnet"
+        },
+        {
+          "display": "5vZ6TGRo",
+          "sig": "5vZ6TGRoF8hnNMCARsw9AdUkrQSQccavrNVxJLuXbiu1VH3rZ8wM1wfuk2DGpFGq1g4YqdHeysBFKdmi4Zag3pjG",
+          "url": "https://explorer.solana.com/tx/5vZ6TGRoF8hnNMCARsw9AdUkrQSQccavrNVxJLuXbiu1VH3rZ8wM1wfuk2DGpFGq1g4YqdHeysBFKdmi4Zag3pjG?cluster=devnet"
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "case": "Refund before the deadline (D7)",
+      "result": "rejected (6021), nothing moves",
+      "txs": [
+        {
+          "display": "8DmQFdjE",
+          "sig": "8DmQFdjEjRsVHTfU1DmgjA6GmXZs52G1fdcuCaKmkSV9qXR6eEKh8MiGpKAKv6xa7LDdNPzK7AS9fbP9DgiyX1S",
+          "url": "https://explorer.solana.com/tx/8DmQFdjEjRsVHTfU1DmgjA6GmXZs52G1fdcuCaKmkSV9qXR6eEKh8MiGpKAKv6xa7LDdNPzK7AS9fbP9DgiyX1S?cluster=devnet"
+        }
+      ]
+    }
+  ],
+  "cliExamples": {
+    "command": "vericode job show --job-id <JOB_ID_HEX>",
+    "requires": "clone do repositório e `cargo build --release` do CLI (ver README: Reproduce from a clone)",
+    "jobs": [
+      {
+        "jobId": "91ea6fcdd2d0c29942246c664d893634b7c66f6cb2babbe436734a74bef5418e",
+        "label": "P′ (D9): Released"
+      },
+      {
+        "jobId": "ec9afb74ceb080e09cb3d605d94883ff5ea90cc638c3f086f5e5c6d4cfed5c48",
+        "label": "T′ (D9): RefundedOnTimeout"
+      },
+      {
+        "jobId": "3e4ca0269e4af134738120703ccbfd751ef0d51fa6dcd2d99525d0d3f24c9c57",
+        "label": "P: Released"
+      },
+      {
+        "jobId": "05f7493483cba42146cada07822160d2fbec4e67d854fafa32f70ef0bb01d758",
+        "label": "T: RefundedOnTimeout"
+      },
+      {
+        "jobId": "3f0dd1c833714e193744c5b95879662c1d8b440cdd3c6467a1585ecc60baec8a",
+        "label": "A: Released"
+      },
+      {
+        "jobId": "5a25ae4808b6da928f57c8787c4fbb173791239d18342b540d4c485647fbc309",
+        "label": "B: RefundedOnFail"
+      }
+    ]
+  },
+  "recordedRuns": {
+    "note": "Todos os dados de transação são de execuções GRAVADAS em devnet, não de dados ao vivo. A landing deve rotular cada cartão como 'Recorded run' e nomear o Job.",
+    "uiRoundDate": "2026-10-07"
+  }
+}
